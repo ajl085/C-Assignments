@@ -1,0 +1,67 @@
+Arrays and Strings
+
+1. When to use String vs. StringBuilder in C#?
+   Use String when it does not need to be changed later on along the line, but use StringBuilder when it does.
+   
+2. What is the base class for all arrays in C#?
+   System.Array is the base class for all arrays in C#.
+   
+3. How do you sort an array in C#?
+   There are many ways to sort an array in C#. C# has built-in functions to sort int and string arrays, such as Array.Sort() which takes array as an input and sorts the array in
+   ascending order, and Array.Reverse() which takes an array as an input and sorts its elements in descending order. It can also be sorted using the classic approach with for loops and
+   comparing values.
+   
+4. What property of an array object can be used to get the total number of elements in an array?
+   The Array.Length property of an array object can be used to get the total number of elements in an array.
+   
+5. Can you store multiple data types in System.Array?
+   No, you cannot store multiple data types in a single System.Array.
+   
+6. What’s the difference between the System.Array.CopyTo() and System.Array.Clone()?
+   The System.Array.CopyTo() copies the elements of an array to another existing array, whereas the System.Array.Clone() creates a new array with all the elements from that array. The
+   cloned and copied elements however contain the references to the same object as the elements in the original array.
+   
+Practice Arrays
+
+1. int[] arr1 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+   int[] arr2 = new int[arr1.Length];
+
+   for (int i = 0; i < arr1.Length; i++)
+   {
+       arr2[i] = arr1[i];
+   }
+
+   for (int j = 0; j < arr2.Length; j++)
+   {
+       Console.WriteLine($"[{arr1[j]},{arr2[j]}]");
+   }
+   
+2.
+
+3. List<int> primeNumList = new List<int>();
+
+   for (int i = startNum; i <= endNum; i++)
+   {
+       int j;
+       for (j = 2; j <= i - 1; j++)
+       {
+           if (i % j == 0)
+           {
+               continue;
+           }
+       }
+       if (j == i)
+       {
+           primeNumList.Add(i);
+       }
+   }
+
+   int[] returnArray = new int[primeNumList.Count];
+
+   for (int k = 0; k < returnArray.Length; k++)
+   {
+       returnArray[k] = primeNumList[k];
+   }
+
+   return returnArray;
