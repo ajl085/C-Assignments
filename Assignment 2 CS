@@ -39,29 +39,69 @@ Practice Arrays
    
 2.
 
-3. List<int> primeNumList = new List<int>();
-
-   for (int i = startNum; i <= endNum; i++)
+3. staticint[]FindPrimesInRange(startNum, endNum)
    {
-       int j;
-       for (j = 2; j <= i - 1; j++)
-       {
-           if (i % j == 0)
-           {
-               continue;
-           }
-       }
-       if (j == i)
-       {
-           primeNumList.Add(i);
-       }
+      List<int> primeNumList = new List<int>();
+
+      for (int i = startNum; i <= endNum; i++)
+      {
+         int j;
+         for (j = 2; j <= i - 1; j++)
+         {
+            if (i % j == 0)
+            {
+                  continue;
+            }
+         }
+         if (j == i)
+         {
+            primeNumList.Add(i);
+         }
+      }
+
+      int[] returnArray = new int[primeNumList.Count];
+
+      for (int k = 0; k < returnArray.Length; k++)
+      {
+           returnArray[k] = primeNumList[k];
+      }
+
+      return returnArray;
+   }
+   
+4.
+
+5. 
+
+7.
+
+Practice Strings
+
+1. Method 1
+   Console.Write("Enter your string to reverse: ");
+   string inputString = Console.ReadLine();
+
+   char[] arr = new char[inputString.Length];
+
+   for (int i = 0; i < inputString.Length; i++)
+   {
+      arr[i] = inputString[i];
    }
 
-   int[] returnArray = new int[primeNumList.Count];
+   string returnString = "";
 
-   for (int k = 0; k < returnArray.Length; k++)
+   for (int j = inputString.Length - 1; j >= 0; j--)
    {
-       returnArray[k] = primeNumList[k];
+      returnString += arr[j];
    }
 
-   return returnArray;
+   Console.WriteLine(returnString);
+   
+   Method 2
+   Console.Write("Enter your string to reverse: ");
+   string inputString = Console.ReadLine();
+
+   for (int i = inputString.Length - 1; i >= 0; i--)
+   {
+      Console.Write(inputString[i]);
+   }
