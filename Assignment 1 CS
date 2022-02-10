@@ -28,6 +28,7 @@ Understanding Data Types
    native languages for unmanaged resource. Managed resource does not provide low-level access to the programmer, whereas unmanaged resource does.
 
 4. Whats the purpose of Garbage Collector in .NET?
+   The purpose of Garbage Collector in .NET is to manage the allocation and release of memory for an application automatically.
 
 Playing with Console Ap
 
@@ -81,7 +82,7 @@ Controlling Flow and Converting Types
    incremented value to x, so y will be 1 greater than its original value, and x will have that same value.
 
 5. What is the difference between break, continue, and return when used inside a loop statement?
-   Break will exit the loop immediately even if there are more iterations left, continue will exit the current iteration and go on to the next iteration, and return will end the loop immediately and return a value.
+   Break will terminate the loop immediately even if there are more iterations left, continue will exit the current iteration and go on to the next iteration, and return will end the loop immediately and return a value.
 
 6. What are the three parts of a for statement and which of them are required?
    The three parts of a for statement are initialization, checking condition, and updating. All 3 parts are optional.
@@ -93,8 +94,10 @@ Controlling Flow and Converting Types
    Yes. Infinite loop
 
 9. What does the underscore _ represent in a switch expression?
+   The underscore _ represents the default keyword to specify some code to run if there is no case match.
 
 10. What interface must an object implement to be enumerated over by using the foreach statement?
+    The System.Collections.IEnumerable or System.Collections.Generic.IEnumerable<T> interfaces must an object implement to be enumerated over by using the foreach statement.
 
 Practice loops and operators
 
@@ -123,6 +126,31 @@ Practice loops and operators
    The code will print 0 to 255 infinitely because byte will never reach 500 as it is capped at 255, and when it gets to 255 the incrementation will loop it back to 0.
        
 2. Print-a-Pyramid
+   int rows = 5;
+   int numSpaces = 4;
+   int numStars = 1;
+
+   for (int i = 0; i < rows; i++)
+   {
+        for (int j = 0; j < numSpaces; j++)
+        {
+            Console.Write(" ");
+        }
+
+        for (int k = 0; k < numStars; k++)
+        {
+            Console.Write("*");
+        }
+        numStars = numStars + 2;
+
+        for (int j = 0; j < numSpaces; j++)
+        {
+            Console.Write(" ");
+        }
+        numSpaces--;
+
+        Console.WriteLine();
+    }
 
 3. // Number guesser program
    int correctNumber = new Random().Next(3) + 1;
@@ -137,10 +165,11 @@ Practice loops and operators
    else if (guessedNumber < 1)
        Console.WriteLine("Too low.");
        
-4.
+4. 
 
 5.
-   
+
+6.
    
    
    
