@@ -1,0 +1,141 @@
+Understanding Data Types
+
+1. What type would you choose for the following “numbers”?
+    - A person’s telephone number: uint
+    - A person’s height: byte
+    - A person’s age: byte
+    - A person’s gender (Male, Female, Prefer Not To Answer): Enum
+    - A person’s salary: uint
+    - A book’s ISBN: ulong
+    - A book’s price: decimal
+    - A book’s shipping weight: double
+    - A country’s population: uint
+    - The number of stars in the universe: ulong
+    - The number of employees in each of the small or medium businesses in the United Kingdom (up to about 50,000 employees per business): ushort
+    
+2. What are the difference between value type and reference type variables? What is boxing and unboxing?
+   Value type variables directly hold the value, whereas reference type variables hold the memory address for the value. Value types are created
+   by using Structs or Enums, whereas reference types are created by using Classes, Interfaces, or Arrays. Value Types are not collected by
+   garbage collectors, whereas reference types are. Value Types are stored in stack memory, whereas reference types store the address on the
+   stack and the actual value on the heap. Value types cannot accept null values, but reference types can. Boxing is the conversion of value type
+   to reference type, whereas unboxing is the conversion of reference type to value type.
+   
+3. What is meant by the terms managed resource and unmanaged resource in .NET?
+
+4. Whats the purpose of Garbage Collector in .NET?
+
+Playing with Console Ap
+
+Console.Write("Enter your favorite color: ");
+string color = Console.ReadLine();
+Console.Write("Enter your astrology sign: ");
+string sign = Console.ReadLine();
+Console.Write("Enter your street address number: ");
+string number = Console.ReadLine();
+Console.WriteLine("Your hacker name is " + color + sign + number);
+
+Practice number sizes and range
+
+1. Console.WriteLine($"A sbyte uses 1 byte in memory, and it can have the minimum value of {sbyte.MinValue} and the maximum value of {sbyte.MaxValue}.");
+   Console.WriteLine($"A byte uses 1 byte in memory, and it can have the minimum value of {byte.MinValue} and the maximum value of {byte.MaxValue}.");
+   Console.WriteLine($"A short uses 2 bytes in memory, and it can have the minimum value of {short.MinValue} and the maximum value of {short.MaxValue}.");
+   Console.WriteLine($"An ushort uses 2 bytes in memory, and it can have the minimum value of {ushort.MinValue} and the maximum value of {ushort.MaxValue}.");
+   Console.WriteLine($"An int uses 4 bytes in memory, and it can have the minimum value of {int.MinValue} and the maximum value of {int.MaxValue}.");
+   Console.WriteLine($"An uint uses 4 bytes in memory, and it can have the minimum value of {uint.MinValue} and the maximum value of {uint.MaxValue}.");
+   Console.WriteLine($"A long uses 8 bytes in memory, and it can have the minimum value of {long.MinValue} and the maximum value of {long.MaxValue}.");
+   Console.WriteLine($"An ulong uses 8 bytes in memory, and it can have the minimum value of {ulong.MinValue} and the maximum value of {ulong.MaxValue}.");
+   Console.WriteLine($"A float uses 4 bytes in memory, and it can have the minimum value of {float.MinValue} and the maximum value of {float.MaxValue}.");
+   Console.WriteLine($"A double uses 8 bytes in memory, and it can have the minimum value of {double.MinValue} and the maximum value of {double.MaxValue}.");
+   Console.WriteLine($"A decimal uses 16 bytes in memory, and it can have the minimum value of {decimal.MinValue} and the maximum value of {decimal.MaxValue}.");
+   
+2. Console.Write("Input: ");
+   int input = Convert.ToInt32(Console.ReadLine());
+   ulong years = (ulong)(input * 100);
+   ulong days = (ulong)(365.242 * years);
+   ulong hours = 24 * days;
+   ulong minutes = 60 * hours;
+   ulong seconds = 60 * minutes;
+   ulong milliseconds = 1000 * seconds;
+   ulong microseconds = 1000 * milliseconds;
+   ulong nanoseconds = 1000 * microseconds;
+   Console.WriteLine($"{input} centuries = {years} years = {days} days = {hours} hours = {minutes} minutes = {seconds} seconds = {milliseconds} milliseconds = {microseconds} microseconds = {nanoseconds} nanoseconds");
+
+Controlling Flow and Converting Types
+
+1. What happens when you divide an int variable by 0? 
+   A System.DivideByZeroException will be thrown.
+   
+2. What happens when you divide a double variable by 0?
+   The result is an infinity value.
+
+3. What happens when you overflow an int variable, that is, set it to a value beyond its range?
+   It will try to convert the variable to a bigger data type.
+
+4. What is the difference between x = y++; and x = ++y;?
+   x = y++ will assign y's value to x and then increment y's value by 1, so x will have y's original value, and y will be 1 greater than its original value. x = ++y will increment y's value by 1 and then assign the
+   incremented value to x, so y will be 1 greater than its original value, and x will have that same value.
+
+5. What is the difference between break, continue, and return when used inside a loop statement?
+   Break will exit the loop immediately even if there are more iterations left, continue will exit the current iteration and go on to the next iteration, and return will end the loop immediately and return a value.
+
+6. What are the three parts of a for statement and which of them are required?
+   The three parts of a for statement are initialization, checking condition, and updating. All 3 parts are optional.
+
+7. What is the difference between the = and == operators?
+   The = operator assigns values to variables, whereas the == operator compares the values of two variables.
+
+8. Does the following statement compile? for ( ; true; )
+   Yes. Infinite loop
+
+9. What does the underscore _ represent in a switch expression?
+
+10. What interface must an object implement to be enumerated over by using the foreach statement?
+
+Practice loops and operators
+
+1. // FizzBuzz
+   for (int i = 1; i <= 100; i++)
+   {
+      if (i % 3 == 0 && i % 5 == 0)
+      {
+          Console.WriteLine("fizzbuzz");
+      }
+      else if (i % 3 == 0)
+      {
+          Console.WriteLine("fizz");
+      }
+      else if (i % 5 == 0)
+      {
+          Console.WriteLine("buzz");
+      }
+      else
+      {
+          Console.WriteLine(i);
+      }
+   }
+   
+   // Byte int question
+   The code will print 0 to 255 infinitely because byte will never reach 500 as it is capped at 255, and when it gets to 255 the incrementation will loop it back to 0.
+       
+2. Print-a-Pyramid
+
+3. // Number guesser program
+   int correctNumber = new Random().Next(3) + 1;
+
+   Console.Write("Enter your guess: ");
+   int guessedNumber = Convert.ToInt32(Console.ReadLine());
+
+   if (guessedNumber == correctNumber)
+       Console.WriteLine("You got the correct answer!");
+   else if (guessedNumber > 3)
+       Console.WriteLine("Too high.");
+   else if (guessedNumber < 1)
+       Console.WriteLine("Too low.");
+       
+4.
+
+5.
+   
+   
+   
+   
