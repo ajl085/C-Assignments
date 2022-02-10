@@ -21,6 +21,11 @@ Understanding Data Types
    to reference type, whereas unboxing is the conversion of reference type to value type.
    
 3. What is meant by the terms managed resource and unmanaged resource in .NET?
+   Managed resource is code that is executed by managed runtime environment or managed by the Common Language Runtime in .NET Framework, whereas unmanaged resource is code that is
+   executed directly by the operating system. Managed resource provides security to the application written in .NET Framework, whereas unmanaged does not provide any security.
+   Memory buffer overflow does not occur in managed code, whereas memory buffer overflow may occur in unmanaged code. Managed resource provides runtime services such as Garbage
+   Collection and exception handling, unmanaged resource does not. The source code for managed resource is compiled in the intermediate language, whereas it directly compiles into
+   native languages for unmanaged resource. Managed resource does not provide low-level access to the programmer, whereas unmanaged resource does.
 
 4. Whats the purpose of Garbage Collector in .NET?
 
