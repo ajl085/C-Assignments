@@ -1,0 +1,72 @@
+03 Object-Oriented Programming
+
+Test your knowledge
+
+1. The six combinations of access modifier keywords are public, private, protected, internal, protected internal, and private protected. The public access modifier makes the type or
+   member accessible by any other code in the same assembly or another assembly that references it. The private access modifier makes the type or member accessible only by code in the
+   same class or struct. The protected access modifier makes the type or member accessible only by code in the same class, or in a class that is derived from that class. The internal
+   access modifier makes the type or member accessible by any code in the same assembly, but not from another assembly. The protected internal access modifier makes the type or member
+   accessible by any code in the assembly in which it's declared, or from within a derived class in another assembly. The private protected access modifier makes the type or member
+   accessible by types derived from the class that are declared within its containing assembly.
+   
+2. A static member belongs to the type itself instead of any object, a const member is a constant field or a constant local, which is not a variable and may not be modified, and a
+   readonly member can only occur as part of the declaration or in a constructor in the same class, and can be assigned and reassigned multiple times within the field declaration and
+   constructor.
+
+3. A constructor creates an object of the class and initializes class members.
+
+4. There are several situations when you want to split a class definition based on business scenarios, and the partial keyword allows you to do so.
+
+5. A tuple is a pair.
+
+6. A record keyword creates a new reference type that is not a class or struct. Records are distinct from classes in that record types use value-based equality.
+
+7. Overloading happens when multiple methods in the same class have the same modifiers and method name but different implementation. Overriding happens between a base class and a child
+   class where they have the same signature, but the child class provides different implementation. Overloading happens in compile time, whereas Overriding happens in runtime.
+   
+8. A field is a variable of any type that is declared directly in a class or struct, whereas a property is a member that provides a flexible mechanism to read, write, or compute the
+   value of a private field.
+   
+9. You can make a method parameter optional by overloading the method. Have one method that do not take in parameters, and have another method with the same signature with parameters.
+   When the user does not enter arguments, then the method without any parameters will be used instead.
+   
+10. An interface defines a contract. Any class or struct that implements that contract must provide an implementation of the members defined in the interface. Abstract classes contain
+    static members but interfaces do not.
+
+11. Members of an interface are at public accessibility level.
+
+12. True
+
+13. True
+
+14. False
+
+15. False
+
+16. True
+
+17. True
+
+18. False
+
+19. False
+
+20. False
+
+21. True
+
+22. False
+
+24. True
+
+Working with Methods
+
+1. The GenerateNumbersmethodGet takes in one parameter for user input for the array length. Use the variable to create an int array with that number of elements. Use a random number
+   function to populate the array with random numbers. Return the array. The Reverse function takes in the int array as a parameter, creates another int array of the same size, and
+   insert the elements into the new array backwards using a for loop. The reversed array is returned. The PrintNumbers method will use a for loop to print out each element to the
+   console.
+   
+2. First number is 0, second number is 1. For the third number and so forth, keep calling the method in which the previous 2 numbers are added, until the user defined length of the
+   fibonacci sequence is satisfied.
+
+Designing and Building Classes using object-oriented principles
